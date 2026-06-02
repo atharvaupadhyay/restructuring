@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Atharva Upadhyay - Message Sent{% endblock %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/success.css">
+{% endblock %}
+
+{% block hero %}
+<section class="hero">
+    <div class="success-container">
+        <h1 class="success-title">Message Sent.</h1>
+        
+        <div class="success-message">
+            <p class="highlight">Thank you for reaching out.</p>
+            <p>Your message has been delivered successfully.</p>
+            <p>I'll get back to you as soon as possible.</p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="/" class="cta-btn secondary">← Return Home</a>
+            <a href="#" class="cta-btn primary">View Projects →</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

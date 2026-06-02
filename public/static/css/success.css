@@ -1,0 +1,114 @@
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.success-container {
+    max-width: 700px;
+    padding: 20px;
+    
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: successReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.success-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3.8rem, 11vw, 10rem);
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.error-container .success-title {
+    font-size: clamp(5rem, 15vw, 13rem);
+    letter-spacing: -0.02em;
+}
+
+.success-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--desc-color);
+    margin-bottom: 40px;
+    transition: color var(--transition-speed) ease;
+}
+
+.success-message p {
+    margin-bottom: 8px;
+}
+
+.success-message .highlight {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    transition: color var(--transition-speed) ease;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-btn.primary {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cta-btn.primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn.secondary {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--card-border);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+body.dark-theme .cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.cta-btn:active {
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes successReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,101 @@
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 10vw, 10rem);
+    line-height: .9;
+    font-weight: 700;
+}
+
+.name-line-1, .name-line-2 {
+    display: block;
+    opacity: 0;
+    animation: clipReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.name-line-2 {
+    animation-delay: 0.2s;
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--sub-color);
+    letter-spacing: 1px;
+    transition: color var(--transition-speed) ease;
+    
+    /* Animation */
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+.desc {
+    margin-top: 35px;
+    max-width: 700px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: var(--desc-color);
+    transition: color var(--transition-speed) ease;
+    
+    /* Animation */
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+.links {
+    display: flex;
+    gap: 18px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 3px;
+    transition: color var(--transition-speed) ease, border var(--transition-speed) ease, opacity 0.3s;
+    
+    /* Animation */
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.links a:nth-child(1) { animation-delay: 0.6s; }
+.links a:nth-child(2) { animation-delay: 0.7s; }
+.links a:nth-child(3) { animation-delay: 0.8s; }
+
+.links a:hover {
+    opacity: .6;
+}
+
+/* Animations definition */
+@keyframes clipReveal {
+    from {
+        opacity: 0;
+        clip-path: inset(0 0 100% 0);
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Atharva Upadhyay - Too Many Requests{% endblock %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/success.css">
+{% endblock %}
+
+{% block hero %}
+<section class="hero">
+    <div class="success-container error-container">
+        <h1 class="success-title">429</h1>
+        
+        <div class="success-message">
+            <p class="highlight">Too Many Requests</p>
+            <p>You are sending messages too fast.</p>
+            <p>Please wait a bit and try again later.</p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="/" class="cta-btn secondary">← Return Home</a>
+            <a href="/contact" class="cta-btn primary">Try Again →</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

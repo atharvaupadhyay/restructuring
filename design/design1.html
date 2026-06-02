@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Atharva Upadhyay - Design 1{% endblock %}
+
+{% block fonts %}
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/design1.css">
+{% endblock %}
+
+{% block hero %}
+    <section class="hero">
+        <h1 class="name">
+            <span class="name-line-1">ATHARVA</span>
+            <span>UPADHYAY</span>
+        </h1>
+
+        <p class="subtitle">
+            STUDENT • CS • MATH
+        </p>
+
+        <p class="desc">
+            I'm currently a Grade 11 student exploring finance,
+            business, and engineering. I've been programming since
+            I was 11, mainly in Python and C++, and enjoy building
+            software, hardware, IoT projects, PCBs, financial tools,
+            machine learning projects, and web applications.
+        </p>
+
+        <div class="links">
+            <a href="#">Projects</a>
+            <a href="#">GitHub</a>
+            <a href="#">Contact</a>
+            <a href="#">Resume</a>
+        </div>
+    </section>
+{% endblock %}
