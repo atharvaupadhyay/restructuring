@@ -9,5 +9,3 @@ if __name__ == '__main__':
         extra_files.append(dotenv_path)
     
     app.run(debug=True, use_reloader=False)
-
-#oogabooga
