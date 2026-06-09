@@ -1,0 +1,160 @@
+/* Achievements Page Stylesheet */
+
+.achievements-header {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: achievementsReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.achievements-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.0;
+}
+
+.achievements-subtitle {
+    font-size: 1.15rem;
+    color: var(--sub-color);
+    line-height: 1.6;
+}
+
+.achievements-hero-section {
+    justify-content: flex-start;
+    padding: 40px 0 20px 0;
+}
+
+/* Timeline Layout */
+.achievements-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 1px solid var(--card-border);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: achievementsReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--text-color);
+    border: 2px solid var(--bg-color);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.5);
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sub-color);
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.timeline-org {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--sub-color);
+    margin-bottom: 12px;
+}
+
+.timeline-desc {
+    font-size: 0.98rem;
+    color: var(--desc-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Timeline links */
+.timeline-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 2px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-color);
+    transform-origin: bottom right;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-link:hover {
+    transform: translateY(-2px);
+}
+
+.timeline-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.timeline-link-arrow {
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-link:hover .timeline-link-arrow {
+    transform: translateX(3px);
+}
+
+/* Animations */
+@keyframes achievementsReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        height: auto !important;
+        min-height: 100vh;
+    }
+    .achievements-hero-section {
+        padding: 20px 0 10px 0;
+    }
+}

@@ -5,7 +5,9 @@ from flask import (
     redirect,
     url_for,
     flash,
-    Response
+    Response,
+    send_file,
+    abort
 )
 
 from flask_limiter import Limiter
@@ -143,6 +145,38 @@ def get_country_from_ip(ip):
 def index():
     return render_template('index.html', active_page='base')
 
+# PROJECTS_LIST = [
+#     {
+#         "slug": "sample-project",
+#         "title": "Sample Project",
+#         "description": "This is a sample project to showcase how separate project pages work. You can copy its HTML file and customize it for other projects.",
+#         "tech_stack": ["Python", "PyTorch", "Flask", "HTML5 Canvas"]
+#     }
+# ]
+
+@app.route('/projects')
+def projects():
+    return render_template('projects.html', active_page='projects')
+
+# @app.route('/projects/<path:slug>')
+# def project_detail(slug):
+#     # Sanitize the slug to prevent directory traversal
+#     safe_slug = re.sub(r'[^a-zA-Z0-9\-_]', '', slug)
+#     if not safe_slug or safe_slug != slug:
+#         abort(404)
+#     try:
+#         return render_template(f'projects/{safe_slug}.html', active_page='projects')
+#     except Exception:
+#         abort(404)
+
+# @app.route('/achievements')
+# def achievements():
+#     return render_template('achievements.html', active_page='achievements')
+
+@app.route("/mandala-monochrome")
+def image():
+    return send_file("../public/static/images/mandala-monochrome.png", mimetype="image/png")
+
 @app.route('/contact', methods=['GET', 'POST'])
 @limiter.limit("5 per hour", methods=["POST"])
 def contact():
@@ -277,3 +311,8 @@ def ratelimit_handler(e):
         flash("You are sending messages too fast. Please wait a bit and try again.", "danger")
         return redirect(url_for('contact'))
     return render_template('429.html'), 429
+
+# 404 Page (Not Found)
+@app.errorhandler(404)
+def not_found_handler(e):
+    return render_template('404.html'), 404

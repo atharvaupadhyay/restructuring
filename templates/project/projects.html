@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}Atharva Upadhyay - Projects{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/projects.css">
+{% endblock %}
+
+{% block hero %}
+<section class="hero projects-hero-section">
+    <div class="projects-header">
+        <h1 class="projects-title">Projects</h1>
+        <p class="projects-subtitle">some of the things i've built or worked on over the years</p>
+    </div>
+
+    <div class="projects-grid">
+        {% for project in projects %}
+        <a href="/projects/{{ project.slug }}" class="project-card">
+            <!-- Image Space Placeholder -->
+            <div class="project-card-image"></div>
+            <div class="project-card-content">
+                <div class="project-info-group">
+                    <h3 class="project-card-title">{{ project.title }}</h3>
+                    <p class="project-card-description">{{ project.description }}</p>
+                </div>
+                <div class="project-card-meta">
+                    <div class="project-card-tags">
+                        {% for tag in project.tech_stack[:3] %}
+                        <span class="project-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <span class="project-card-arrow">→</span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="back-home-container" style="margin-top: 50px;">
+        <a href="/" class="back-home-link">Back to Home</a>
+    </div>
+</section>
+{% endblock %}

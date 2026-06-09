@@ -105,14 +105,33 @@
 .info-link.email-link {
     text-decoration: none;
     color: var(--text-color);
-    border-bottom: 1px solid var(--text-color);
     padding-bottom: 2px;
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.info-link.email-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-color);
+    transform-origin: bottom right;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-speed) ease;
 }
 
 .info-link.email-link:hover {
-    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+.info-link.email-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Middle Column: OR */
@@ -198,17 +217,18 @@ body.dark-theme .form-group textarea:focus {
     letter-spacing: 0.08em;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .submit-btn:hover {
-    opacity: 0.9;
+    background: transparent;
+    color: var(--text-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 body.dark-theme .submit-btn:hover {
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.03);
 }
 
 .submit-btn:active {
@@ -246,26 +266,6 @@ body.dark-theme .submit-btn:hover {
     background: rgba(255, 193, 7, 0.1);
     color: #b58900;
     border: 1px solid rgba(255, 193, 7, 0.15);
-}
-
-/* Footer Link */
-.back-home-container {
-    text-align: center;
-    margin-top: 35px;
-}
-
-.back-home-link {
-    text-decoration: none;
-    color: var(--text-color);
-    border-bottom: 1px solid var(--text-color);
-    padding-bottom: 2px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: opacity 0.2s ease;
-}
-
-.back-home-link:hover {
-    opacity: 0.7;
 }
 
 /* Animations */

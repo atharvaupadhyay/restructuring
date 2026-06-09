@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block title %}Atharva Upadhyay - Sample Project{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/projects.css">
+{% endblock %}
+
+{% block hero %}
+<section class="hero" style="justify-content: flex-start; padding: 40px 20px 20px 20px;">
+    <div class="project-detail-container">
+        <!-- Back Link -->
+        <a href="/projects" class="project-back-btn">← Back to Projects</a>
+
+        <!-- Header -->
+        <div class="project-detail-header">
+            <h1 class="project-detail-title">Sample Project</h1>
+            <p class="project-detail-subtitle">A high-performance neural engine for real-time visualization.</p>
+        </div>
+
+        <!-- Hero Image Placeholder -->
+        <div class="project-detail-hero-image"></div>
+
+        <!-- Grid layout (Content + Sidebar) -->
+        <div class="project-detail-grid">
+            <!-- Left Side: Detailed Content -->
+            <div class="project-detail-body">
+                <h2>Overview</h2>
+                <p>
+                    This is a template file for a specific project. You can copy this file, rename it to match your other project slugs, and edit the HTML directly to add customized details!
+                </p>
+                <p>
+                    This sample project demonstrates a deep integration between PyTorch neural models and a clean canvas-based visualization engine. It was built to solve the latency bottleneck associated with drawing thousands of active particles calculated on-the-fly.
+                </p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Real-time Inference:</strong> Runs deep networks at 60 FPS using optimized C++ bindings.</li>
+                    <li><strong>Interactive Canvas:</strong> Highly optimized HTML5 Canvas render pipeline with double buffering.</li>
+                    <li><strong>Adaptive Learning:</strong> Adjusts particle velocity predictions dynamically based on user interaction vectors.</li>
+                    <li><strong>Cross-platform Compatibility:</strong> Runs natively on desktop and mobile web viewports.</li>
+                </ul>
+
+                <h2>Technical Implementation</h2>
+                <p>
+                    The core engine is implemented using an asynchronous worker architecture. Heavy neural calculations are offloaded to web workers, ensuring the UI remains perfectly responsive and fluid.
+                </p>
+                <p>
+                    For styling and interaction, we leverage vanilla CSS variables and custom ease curves to transition state representations with micro-animations.
+                </p>
+
+                <h2>Future Roadmap</h2>
+                <p>
+                    Plan to support 3D WebGL rendering overlays, multi-agent cooperative pathways, and cloud-synchronized state weights.
+                </p>
+            </div>
+
+            <!-- Right Side: Sidebar Meta -->
+            <div class="project-detail-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Role</h3>
+                    <div class="sidebar-content">Solo Creator & Developer</div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Timeline</h3>
+                    <div class="sidebar-content">Jan 2026 - Present</div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Technologies</h3>
+                    <div class="sidebar-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">PyTorch</span>
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">HTML5 Canvas</span>
+                        <span class="project-tag">Web Workers</span>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <a href="https://github.com/atharvaupadhyay/" target="_blank" class="project-action-btn primary">View Source Code</a>
+                    <a href="#" class="project-action-btn secondary">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

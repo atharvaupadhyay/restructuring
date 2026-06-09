@@ -80,9 +80,14 @@
 }
 
 .cta-btn.primary:hover {
-    opacity: 0.9;
+    background: transparent;
+    color: var(--text-color);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme .cta-btn.primary:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.03);
 }
 
 .cta-btn.secondary {
@@ -92,13 +97,14 @@
 }
 
 .cta-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: transparent;
     border-color: var(--text-color);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 body.dark-theme .cta-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.02);
 }
 
 .cta-btn:active {
