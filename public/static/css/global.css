@@ -51,7 +51,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("/static/images/mandala-monochrome.png") center/cover no-repeat;
+    background: url("/static/images/mandala-monochrome.webp") center/cover no-repeat;
     opacity: var(--mandala-light-opacity);
     filter: grayscale(100%);
     mix-blend-mode: normal;
@@ -64,7 +64,7 @@ body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("/static/images/mandala-monochrome.png") center/cover no-repeat;
+    background: url("/static/images/mandala-monochrome.webp") center/cover no-repeat;
     opacity: var(--mandala-dark-opacity);
     filter: invert(1) grayscale(100%);
     mix-blend-mode: normal;
