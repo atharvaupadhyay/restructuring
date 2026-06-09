@@ -24,11 +24,11 @@
     <!-- Mandala Opacity Overrides from Environment Variables -->
     <style>
         :root {
-            --mandala-light-opacity: 0.05;
+            --mandala-light-opacity: {{ mandala_light_opacity }};
         }
 
         .dark-theme {
-            --mandala-dark-opacity: 0.025;
+            --mandala-dark-opacity: {{ mandala_dark_opacity }};
         }
     </style>
 
@@ -36,7 +36,7 @@
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
             }
         })();
@@ -90,7 +90,7 @@
             if (savedTheme) {
                 return savedTheme;
             }
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            return 'light';
         };
 
         const applyTheme = (theme) => {

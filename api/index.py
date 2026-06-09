@@ -38,6 +38,14 @@ app.secret_key = os.environ.get("SECRET_KEY", os.urandom(24))
 # CSRF Protection
 csrf = CSRFProtect(app)
 
+@app.context_processor
+def inject_mandala_opacities():
+    return {
+        'mandala_light_opacity': os.environ.get('MANDALA_LIGHT_OPACITY', '0.05'),
+        'mandala_dark_opacity': os.environ.get('MANDALA_DARK_OPACITY', '0.025')
+    }
+
+
 # Rate Limiting helper
 def real_ip():
     # try Cloudflare first

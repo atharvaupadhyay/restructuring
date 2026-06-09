@@ -8,4 +8,4 @@ if __name__ == '__main__':
     if os.path.exists(dotenv_path):
         extra_files.append(dotenv_path)
     
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=True, extra_files=extra_files)
