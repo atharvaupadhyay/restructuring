@@ -57,7 +57,7 @@ def real_ip():
     forwarded = request.headers.get("X-Forwarded-For")
     if forwarded:
         return forwarded.split(",")[0].strip()
-    return request.remote_addr or "127.0.0.1"
+    return request.remote_addr or "0.0.0.0"
 
 storage_uri = os.environ.get("REDIS_URL") or "memory://"
 limiter = Limiter(
